@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale:1">
+    <title>Cashier 1.0</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  </head>
+  <body>
+    <main>
+      <h1>Cashier 1.0</h1>
+      <div id="device">
+        <div id="device-top">
+          <div id="device-top-left">
+            <div id="ticket-wrapper">
+              <div id="ticket">
+                <h2>Total</h2>
+                <p>$<span id="price"></span></p>
+              </div>
+            </div>
+          </div>
+          <div id="device-top-right">
+            <div id="screen-input">
+              <h3 id="input-header">Enter cash from customer:</h3>
+              <input id="cash" name="number" type="text" inputmode="numeric" focused autocomplete="off"/>
+              <div id="results-wrapper">
+                <div id="results-div"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="device-bottom" class="border-top">
+          <div id="device-bottom-left">
+            <div id="btns">
+              <div id="btns-top">
+                <button id="on-btn" class="btn rounded" value="power"><i class="fa fa-power-off" aria-hidden="true"></i></button>
+                <button id="arrow-left" class="btn rounded" value="backdelete"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+                <button id="clear-btn" class="btn rounded" value="C"><i class="fa fa-c" aria-hidden="true"></i></button>
+                <button id="percent-btn" class="btn rounded" value="percent"><i class="fa fa-percent" aria-hidden="true"></i></button>
+              </div>
+              <div id="btns-bottom">
+                <div id="btns-numbers">
+                  <button class="btn" aria-label="1" value="1"><i class="fa fa-1" aria-hidden="true"></i></button>
+                  <button class="btn" aria-label="2" value="2"><i class="fa fa-2" aria-hidden="true"></i></button>
+                  <button class="btn" aria-label="3" value="3"><i class="fa fa-3" aria-hidden="true"></i></button>
+                  <button class="btn" aria-label="4" value="4"><i class="fa fa-4" aria-hidden="true"></i></button>
+                  <button class="btn" aria-label="5" value="5"><i class="fa fa-5" aria-hidden="true"></i></button>
+                  <button class="btn" aria-label="6" value="6"><i class="fa fa-6" aria-hidden="true"></i></button>
+                  <button class="btn" aria-label="7" value="7"><i class="fa fa-7" aria-hidden="true"></i></button>
+                  <button class="btn" aria-label="8" value="8"><i class="fa fa-8" aria-hidden="true"></i></button>
+                  <button class="btn" aria-label="9" value="9"><i class="fa fa-9" aria-hidden="true"></i></button>
+                  <button class="btn" aria-label="0" value="0"><i class="fa fa-0" aria-hidden="true"></i></button>
+                  <button class="btn dot" aria-label="dot" value="dot">.</button>
+                </div>
+                <div id="btns-operations">
+                  <button class="btn" aria-label="add"><i class="fa fa-add" aria-hidden="true"></i></button>
+                  <button class="btn" aria-label="subtract"><i class="fa fa-subtract" aria-hidden="true"></i></button>
+                  <button class="btn" aria-label="multiply"><i class="fa fa-multiply" aria-hidden="true"></i></button>
+                  <button class="btn" aria-label="divide"><i class="fa fa-divide" aria-hidden="true"></i></button>
+                </div>
+                <div>
+                  <button id="purchase-btn" class="btn equals" aria-label="equals"><i class="fa fa-equals" aria-hidden="true"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="device-bottom-right" class="border-left">
+            <div id="screen-input">
+              <div id="change-due">
+                <p class="change change-heading">CHANGE LEFT</p>
+                <p class="change">Penny <strong>$<span id="penny" class="type-amount"></span></strong></p>
+                <p class="change">Nickel <strong>$<span id="nickel" class="type-amount"></span></strong></p>
+                <p class="change">Dime <strong>$<span id="dime" class="type-amount"></span></strong></p>
+                <p class="change">Quarter <strong>$<span id="quarter" class="type-amount"></span></strong></p>
+                <p class="change">One <strong>$<span id="one" class="type-amount"></span></strong></p>
+                <p class="change">Five <strong>$<span id="five" class="type-amount"></span></strong></p>
+                <p class="change">Ten <strong>$<span id="ten" class="type-amount"></span></strong></p>
+                <p class="change">Twenty <strong>$<span id="twenty" class="type-amount"></span></strong></p>
+                <p class="change">One Hundred <strong>$<span id="one-hundred" class="type-amount"></span></strong></p>
+                
+              </div>
+            </div>
+        </div>
+        
+      </div>
+      <div id="screen-content">
+          
+          
+        </div>
+    </main>
+    <footer>
+      <a href="https://www.freecodecamp.org/" alt="freeCodeCamp site" target="_blank"><img src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg" width="200"></a>
+    </footer> 
+    <script src="./script.js"></script>
+  </body>
+</html>
