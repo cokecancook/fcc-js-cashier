@@ -1,4 +1,9 @@
-# FCC JS Cash Register
+# JS Cash Register
+## Freecodecamp 
+
+<img width="1255" height="774" alt="Screenshot 2025-07-21 at 01 23 44" src="https://github.com/user-attachments/assets/e3b1b488-db82-4001-917d-0137608996e6" />
+
+---
 
 This project is a solution for the FreeCodeCamp JavaScript Cash Register project. It provides a simple web-based interface to calculate and display the change to be returned by a cash register, given the purchase price, payment, and available cash in the drawer.
 
