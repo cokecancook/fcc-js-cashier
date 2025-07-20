@@ -300,11 +300,16 @@ function displayChangeDue(change) {
     changeHeading.textContent = "CHANGE DUE";
   }
   
-  // Reset all coin displays to 0.00
+  // Reset all coin displays to 0
   Object.keys(availableCoins).forEach(coinName => {
     const element = document.getElementById(coinName);
     if (element) {
-      element.textContent = "0.00";
+      // Less than $1 - show 0.00, $1 and above - show 0
+      if (coinName === 'penny' || coinName === 'nickel' || coinName === 'dime' || coinName === 'quarter') {
+        element.textContent = "0.00";
+      } else {
+        element.textContent = "0";
+      }
       element.style.color = "";
     }
   });
@@ -313,7 +318,12 @@ function displayChangeDue(change) {
   change.forEach(coin => {
     const element = document.getElementById(coin.name);
     if (element) {
-      element.textContent = coin.total.toFixed(2);
+      // Less than $1 - show 2 decimal places, $1 and above - show integers
+      if (coin.name === 'penny' || coin.name === 'nickel' || coin.name === 'dime' || coin.name === 'quarter') {
+        element.textContent = coin.total.toFixed(2);
+      } else {
+        element.textContent = Math.round(coin.total);
+      }
       element.style.color = "#00ff00"; // Green color for change
     }
   });
@@ -332,15 +342,18 @@ function updateAvailableCoins(change) {
 
 // Update coin display
 function updateCoinDisplay() {
+  // Less than $1 - show 2 decimal places
   penny.textContent = availableCoins.penny.toFixed(2);
   nickel.textContent = availableCoins.nickel.toFixed(2);
   dime.textContent = availableCoins.dime.toFixed(2);
   quarter.textContent = availableCoins.quarter.toFixed(2);
-  one.textContent = availableCoins.one.toFixed(2);
-  five.textContent = availableCoins.five.toFixed(2);
-  ten.textContent = availableCoins.ten.toFixed(2);
-  twenty.textContent = availableCoins.twenty.toFixed(2);
-  oneHundred.textContent = availableCoins["one-hundred"].toFixed(2);
+  
+  // $1 and above - show integers only
+  one.textContent = Math.round(availableCoins.one);
+  five.textContent = Math.round(availableCoins.five);
+  ten.textContent = Math.round(availableCoins.ten);
+  twenty.textContent = Math.round(availableCoins.twenty);
+  oneHundred.textContent = Math.round(availableCoins["one-hundred"]);
   
   // Reset colors to default
   penny.style.color = "";
