@@ -230,6 +230,7 @@ main {
   background: linear-gradient(var(--light), white 50%, white 70%, var(--light));
   z-index: 10;
   animation: 2s ease-out 0s 1 slideInFromBottom;
+  display: none; /* Start hidden */
 }
 
 #ticket:hover {
@@ -270,6 +271,7 @@ main {
   color: var(--light);
   text-shadow: 0 0 5px var(--highlight);
   pointer-events: none;
+  display: none; /* Start hidden */
 }
 
 #cash {
@@ -287,6 +289,7 @@ main {
   font-weight: 400;
   color: var(--light);
   text-shadow: 0 0 6px var(--highlight);
+  display: none; /* Start hidden */
 }
 
 #cash:focus {
@@ -302,7 +305,7 @@ main {
   font-weight: 300;
   padding: 1rem;
   line-height: 1em;
-  /*display: none;*/
+  display: none; /* Start hidden */
 }
 
 .alert {
@@ -378,6 +381,12 @@ main {
 #on-btn {
   /*color: lime;*/
   background: linear-gradient(silver, gray) padding-box,
+    linear-gradient(to top, var(--dark), darkslategray) border-box;
+  border: 3px solid transparent;
+}
+
+#on-btn.on {
+  background: linear-gradient(silver, gray) padding-box,
     linear-gradient(to top, green, lime) border-box;
   border: 3px solid transparent;
 }
@@ -401,10 +410,11 @@ main {
   height: 200px;
   display: flex;
   flex-direction: column;
-  column-gap: 2rem;
+  column-gap: 1.6rem;
   flex-flow: column wrap;
-  padding: 1.6rem 2.3rem 1.5rem 2rem;
+  padding: 1.6rem 2rem 1.5rem 1.6rem;
   pointer-events: none;
+  display: none; /* Start hidden */
 }
 
 .change {
@@ -416,6 +426,12 @@ main {
   text-align: right;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.change strong {
+  min-width: 60px;
+  text-align: right;
 }
 
 .change-heading {
